@@ -906,17 +906,6 @@ client.on('message', message => {
     }
 });
 
-client.on('guildMemberRemove', async function(member) {
-  try {
-    await member.ban({
-      days: 7,
-      reason: 'Automatic Softban to Remove Messages'
-    });
-    await member.guild.unban(member, 'Automatic Softban to Remove Messages');
-  } catch (e) {
-    console.log(e);
-  }
-})
 
 client.on('message',  (message) => {
         if(message.content.startsWith('-slap')) {
