@@ -1882,10 +1882,10 @@ client.on('message',async msg => {
   if(msg.content.startsWith(p + "setstats")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('? **go play minecraft**');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('? **البوت لا يمتلك صلاحية**');
-  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
-           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
-                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
-                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
+  var ggg= msg.guild.createChannel('n3k4a is one', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('n3k4a is one', 'voice').then(al => {
+                var aa =msg.guild.createChannel('n3k4a is one', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('n3k4a is one', 'voice').then(alph => {
        al.setParent(kk);
        alp.setParent(kk);
        alph.setParent(kk);
@@ -1905,7 +1905,7 @@ client.on('message',async msg => {
 
   setInterval(() => {
       var currentTime = new Date(),
-hours = currentTime.getHours() + 3 ,
+hours = currentTime.getHours() + 2 ,
 minutes = currentTime.getMinutes(),
 Seconds = currentTime.getSeconds(),
 Year = currentTime.getFullYear(),
