@@ -687,7 +687,7 @@ client.on('message', message => {
 }
 });
 
-client.on('message',async message => {
+client.on("message", async function(message) {
     var p = "-"
   function timeCon(time) {
   let days = Math.floor(time % 31536000 / 86400)
@@ -737,7 +737,7 @@ client.on('message', message => {
     });
 
 
-client.on('message',async message => {
+client.on("message", async function(message) {
   var room;
   var title;
   var duration;
@@ -2264,7 +2264,7 @@ message.channel.send(embed500)
 })
 
 
-client.on('message',async message => {
+client.on("message", async function(message) {
   if(message.content.startsWith(prefix + "id")) {
     if(message.author.bot) return;
     if(message.channel.type === 'dm') return;
