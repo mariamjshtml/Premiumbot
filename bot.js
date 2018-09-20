@@ -2103,22 +2103,4 @@ client.on('message', function(msg) {
     }
   });
 
-  var prefix = "-";
-    client.on('message', message => {
-    if(message.content.startsWith(prefix + '2avatar')) {
-         var men = message.mentions.users.first();
-   var heg;
-      if(men) {
-          heg = men
-      } else {
-          heg = message.author
-      }
-  var avatar = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setTitle(heg.username)
-.setImage(heg.avatarURL)
-
-message.channel.sendEmbed(avatar)
-    }
-});
 client.login(process.env.BOT_TOKEN);
