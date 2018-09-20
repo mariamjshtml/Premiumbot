@@ -863,7 +863,6 @@ if (message.content.startsWith(prefix + "uptime")) {
 });
 
 
-
 client.on('message', message => {
      if(!message.channel.guild) return;
                 if(message.content.startsWith(prefix + 'allbots')) {
