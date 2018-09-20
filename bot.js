@@ -2388,6 +2388,9 @@ client.on('message', function(msg) {
       .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
       msg.channel.send({embed:embed});
     }
-  });
+   });
+
+
+
 
 client.login(process.env.BOT_TOKEN);
