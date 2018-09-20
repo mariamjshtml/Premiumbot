@@ -2295,8 +2295,6 @@ client.on('message',async message => {
 });
   
 
-var prefix = "-"
-
 client.on('message', message => {
      if (message.content === (prefix + "help")) {
      let embed = new Discord.RichEmbed()
