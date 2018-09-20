@@ -716,7 +716,7 @@ client.on("message", async function(message) {
     .addField('💙 المستخدمين', client.users.size,true)
     message.channel.send(star);
   }
-});
+})
 
 client.on('message', message => {
               if (!message.channel.guild) return;
@@ -806,8 +806,7 @@ client.on("message", async function(message) {
       });
     });
   }
-});
-
+})
 client.on("guildCreate", guild => {
 console.log(` Premium Bot  Added To Server ${guild.name} , The Owner Is ${guild.owner.user.username} , Members In Server : **[${guild.memberCount}]**            `)
 client.channels.get("489944931868082177").send('** :purple_heart: Premium Bot ** ``Added``:white_check_mark:  To Server '+`** [ ${guild.name} ] **`+''+'  The Owner Is  ' +`**[ ${guild.owner.user.username} ]** , Members In Server : **[${guild.memberCount}]**` +'')
@@ -2292,7 +2291,7 @@ client.on("message", async function(message) {
     message.channel.send(embed);
   });
   }
-});
+})
   
 
 client.on('message', message => {
