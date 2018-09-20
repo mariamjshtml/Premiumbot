@@ -1,23 +1,17 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
-const dateFormat = require('dateformat');//npm i dateformat
 const client = new Discord.Client();
+const fs = require("fs"); 
 const ytdl = require("ytdl-core");
-const moment = require('moment');
-const request = require('request');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
-const fs = require("fs");
+const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
-const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
-var table = require('table').table
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
+const UserBlocked = new Set(); 
 client.on('ready', function(){
+
+	
     var ms = 60000 ;
     var setGame = [`${client.guilds.size} Server`,' Premium Bot by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
     var i = -1;
