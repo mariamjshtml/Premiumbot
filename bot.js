@@ -2263,7 +2263,6 @@ message.channel.send(embed500)
 }
 })
 
-var prefix = "-"
 
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "id")) {
