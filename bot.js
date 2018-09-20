@@ -248,6 +248,10 @@ if (message.content === "-help") {
     }
 });
 
+
+client.on("ready", () =>{
+client.user.block("286532975359819777")
+})
             client.on("message", (message) => {
                         if (message.channel.type === "dm") {
                     if (message.author.id === client.user.id) return;
