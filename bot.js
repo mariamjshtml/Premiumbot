@@ -818,7 +818,6 @@ client.on("guildDelete", guild => {
   client.channels.get("489944931868082177").send('** :purple_heart: Premium Bot  **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
   });
 
-var prefix = "-";
 
 client.on('message', message => {
      if (message.author.bot) return;
