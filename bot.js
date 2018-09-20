@@ -2085,8 +2085,8 @@ client.on("message", message => {
                           }
 });
  
-   var prefix = "-"
-  client.on('message', async msg => {
+    client.on('message', async msg => {
+    const prefix = '-'
     if (msg.author.bot) return undefined;
     if (!msg.content.startsWith(prefix)) return undefined;
     const args = msg.content.split(' ');
@@ -2376,8 +2376,7 @@ function play(guild, song) {
 })
 }
 });
-
-
+  
 client.on('message', function(msg) {
     const prefix = '-'
     if(msg.content.startsWith (prefix  + 'server')) {
