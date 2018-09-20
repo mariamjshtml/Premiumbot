@@ -117,10 +117,6 @@ const x5bz4 = [
 });
 
 
-
-
-const prefix = "-";
-
 client.on('message', message => {
 if (message.content === "-help") {
     let pages = [`
