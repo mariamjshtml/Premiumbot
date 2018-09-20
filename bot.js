@@ -1,23 +1,20 @@
 const Discord = require('discord.js');
-const bot = new Discord.Client();
-const dateFormat = require('dateformat');//npm i dateformat
 const client = new Discord.Client();
-const ytdl = require('ytdl-core');
-const moment = require('moment');
-const request = require('request');
-const fs = require("fs");
+const fs = require("fs"); 
+const ytdl = require("ytdl-core");
+const { Client, Util } = require('discord.js');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
-const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const discord_token = "NDIyMDM3NzQwNTkxMzgyNTI4.DYV8zA.6vBJjF7Op9T_bH_YOwRMXqwh9vc";
-var table = require('table').table
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
+const YouTube = require('simple-youtube-api');
+const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
+const queue = new Map();
+const UserBlocked = new Set(); 
 client.on('ready', function(){
+const prefix = '-'
+
+	
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Premium Bot by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -119,10 +116,6 @@ const x5bz4 = [
   }
 });
 
-
-
-
-var prefix = "-";
 
 client.on('message', message => {
 if (message.content === "-help") {
@@ -245,6 +238,8 @@ if (message.content === "-help") {
     })
     }
 });
+
+
 
             client.on("message", (message) => {
                         if (message.channel.type === "dm") {
@@ -742,8 +737,6 @@ client.on('message', message => {
     });
 
 
-var prefix = "-";
-
 client.on('message',async message => {
   var room;
   var title;
@@ -825,7 +818,6 @@ client.on("guildDelete", guild => {
   client.channels.get("489944931868082177").send('** :purple_heart: Premium Bot  **``Kicked``:x:  From Server '+`** [ ${guild.name} ] **`+''+' The Owner Is ' +`**[ ${guild.owner.user.username} ]**` +'')
   });
 
-var prefix = "-";
 
 client.on('message', message => {
      if (message.author.bot) return;
@@ -870,7 +862,6 @@ if (message.content.startsWith(prefix + "uptime")) {
 }
 });
 
-var prefix = "-";
 
 client.on('message', message => {
      if(!message.channel.guild) return;
@@ -1287,7 +1278,7 @@ client.on('message',  (message) => {
 });
 
 
-   var prefix = "-";
+ 
 
 var cats = [
 
@@ -1493,7 +1484,6 @@ client.on("message", async message => {
         }
         });
 
-var prefix = "-"
 
 client.on('message', message => {
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -1734,7 +1724,6 @@ if (message.content.startsWith('-ask')) {
   });
 
 
-
 client.on('message', ra3d => {
 var prefix = "-";
                         let args = ra3d.content.split(" ").slice(1).join(" ")
@@ -1843,7 +1832,6 @@ if(message.content.startsWith("-slots")) {
 });
 
 
-var prefix = "-";
 
 client.on('message', message => {
   if (message.author.bot) return;
@@ -1880,10 +1868,10 @@ client.on('message',async msg => {
   if(msg.content.startsWith(p + "setstats")) {
   if(!msg.guild.member(msg.author).hasPermissions('MANAGE_CHANNELS')) return msg.reply('? **go play minecraft**');
   if(!msg.guild.member(client.user).hasPermissions(['MANAGE_CHANNELS'])) return msg.reply('? **البوت لا يمتلك صلاحية**');
-  var ggg= msg.guild.createChannel('SERVER STATS', 'category').then(kk => {
-           var ccc =msg.guild.createChannel('SERVER STATS', 'voice').then(al => {
-                var aa =msg.guild.createChannel('SERVER STATS', 'voice').then(alp => {
-                   var aaa =msg.guild.createChannel('SERVER STATS', 'voice').then(alph => {
+  var ggg= msg.guild.createChannel('n3k4a is one', 'category').then(kk => {
+           var ccc =msg.guild.createChannel('n3k4a is one', 'voice').then(al => {
+                var aa =msg.guild.createChannel('n3k4a is one', 'voice').then(alp => {
+                   var aaa =msg.guild.createChannel('n3k4a is one', 'voice').then(alph => {
        al.setParent(kk);
        alp.setParent(kk);
        alph.setParent(kk);
@@ -1903,7 +1891,7 @@ client.on('message',async msg => {
 
   setInterval(() => {
       var currentTime = new Date(),
-hours = currentTime.getHours() + 3 ,
+hours = currentTime.getHours() + 2 ,
 minutes = currentTime.getMinutes(),
 Seconds = currentTime.getSeconds(),
 Year = currentTime.getFullYear(),
@@ -1973,7 +1961,6 @@ message.channel.send(embed500)
 }
 })
 
-var prefix = "-"
 
 client.on('message',async message => {
   if(message.content.startsWith(prefix + "id")) {
@@ -2005,8 +1992,6 @@ client.on('message',async message => {
   }
 });
   
-
-var prefix = "-"
 
 client.on('message', message => {
      if (message.content === (prefix + "help")) {
@@ -2101,6 +2086,6 @@ client.on('message', function(msg) {
       .addField('📅**__ تم عمل السيرفر في__**',msg.guild.createdAt.toLocaleString())
       msg.channel.send({embed:embed});
     }
-  });
+   });
 
 client.login(process.env.BOT_TOKEN);
