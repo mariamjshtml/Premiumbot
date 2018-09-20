@@ -1278,7 +1278,7 @@ client.on('message',  (message) => {
 });
 
 
-   var prefix = "-";
+ 
 
 var cats = [
 
