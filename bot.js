@@ -2159,7 +2159,7 @@ client.on('message', function(message) {
 	const mess = message.content.toLowerCase();
 	const args = message.content.split(' ').slice(1).join(' ');
 
-	if (mess.startsWith('?play')) {
+	if (mess.startsWith('-play')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// if user is not insert the URL or song title
 		if (args.length == 0) {
@@ -2260,14 +2260,14 @@ client.on('message', function(message) {
 			});
 		}
 	}
-	else if (mess.startsWith('?skip')) {
+	else if (mess.startsWith('-skip')) {
 		message.reply(':gear: **تم التخطي**').then(() => {
 			skip_song(message);
 			var server = server = servers[message.guild.id];
 			if (message.guild.voiceConnection) message.guild.voiceConnection.end();
 		});
 	}
-	else if (message.content.startsWith('?vol')) {
+	else if (message.content.startsWith('-vol')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		// console.log(args)
 		if (args > 100) return message.reply(':x: **100**');
@@ -2297,29 +2297,29 @@ client.on('message', function(message) {
 		var server = server = servers[message.guild.id];
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	}
-	else if (mess.startsWith('?pause')) {
+	else if (mess.startsWith('-pause')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':gear: **تم الايقاف مؤقت**').then(() => {
 			dispatcher.pause();
 		});
 	}
-	else if (mess.startsWith('?unpause')) {
+	else if (mess.startsWith('-unpause')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':gear: **تم اعاده التشغيل**').then(() => {
 			dispatcher.resume();
 		});
 	}
-	else if (mess.startsWith('?stop')) {
+	else if (mess.startsWith('-stop')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':name_badge: **تم الايقاف**');
 		var server = server = servers[message.guild.id];
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	}
-	else if (mess.startsWith('?join')) {
+	else if (mess.startsWith('-join')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.react('?'));
 	}
-		else if (mess.startsWith(prefix - 'j')) {
+		else if (mess.startsWith(prefix - '-')) {
 		if (!message.member.voiceChannel) return message.channel.send(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.channel.send('**Done...:white_check_mark: **'));
 	}
