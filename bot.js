@@ -30,7 +30,6 @@ client.on('ready', function(){
         i = i+j;
         client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
     }, ms);
-   console.log(` BOTINFO> Name: ${shard.guilds.size}`);  
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
  console.log(` ║║─╚╬══╣║╔══╦╗╔╦╗─╔╗ |> Members: ${client.users.size}`);
