@@ -181,6 +181,8 @@ if (message.content === "-help") {
 『-giveaway / يسويلك قف اوي علي الشي الي تبيه』
 『-setwelcomer /  <welcome> يجب ان يكون اسم روم الترحيب 』
 『-nick/ لتغيراسماء جميع الاعضاء』
+『-mutechannel / لقفل الشات علي الاعضاء في السيرفر』
+『-unmutechannel / لفتح الشات لجميع الاعضاء في السيرفر』
    `,`
         ***__Music orders__***
 **
@@ -305,9 +307,11 @@ var cont = message.content.slice(prefix.length).split(" ");
     } 
 });
 
+var prefix = "-";
+
 client.on('message', message => {
 
-    if(message.content === prefix + "-mutechannel") {
+    if(message.content === prefix + "mutechannel") {
                         if(!message.channel.guild) return message.reply('** This command only for servers**');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__ليس لديك صلاحيات__**');
@@ -318,7 +322,7 @@ if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply(' **__
                message.reply("**__تم تقفيل الشات__ :white_check_mark: **")
            });
              }
- if(message.content === prefix + "-unmutechannel") {
+ if(message.content === prefix + "unmutechannel") {
                      if(!message.channel.guild) return message.reply('** This command only for servers**');
 
 if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.reply('**__ليس لديك صلاحيات__**');
