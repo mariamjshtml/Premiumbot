@@ -2295,7 +2295,7 @@ client.on('message', function(message) {
 			});
 		}
 	}
-	else if (mess.startsWith('.skip')) {
+	else if (mess.startsWith('-skip')) {
 		message.reply(':gear: **تم التخطي**').then(() => {
 			skip_song(message);
 			var server = server = servers[message.guild.id];
@@ -2332,13 +2332,13 @@ client.on('message', function(message) {
 		var server = server = servers[message.guild.id];
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	}
-	else if (mess.startsWith('.pause')) {
+	else if (mess.startsWith('-pause')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':gear: **تم الايقاف مؤقت**').then(() => {
 			dispatcher.pause();
 		});
 	}
-	else if (mess.startsWith('.unpause')) {
+	else if (mess.startsWith('-unpause')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.reply(':gear: **تم اعاده التشغيل**').then(() => {
 			dispatcher.resume();
@@ -2350,7 +2350,7 @@ client.on('message', function(message) {
 		var server = server = servers[message.guild.id];
 		if (message.guild.voiceConnection) message.guild.voiceConnection.disconnect();
 	}
-	else if (mess.startsWith('.join')) {
+	else if (mess.startsWith('-join')) {
 		if (!message.member.voiceChannel) return message.reply(':x: **You have to be in a voice channel to use this command.**');
 		message.member.voiceChannel.join().then(message.react('?'));
 	}
