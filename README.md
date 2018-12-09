@@ -1,7 +1,5 @@
 
 
-
-
 >هذا البوت بلغه العربيه فقط
 
 [![invite bot](https://cdn.discordapp.com/attachments/462283949087916033/521407515741650954/1.jpg)](https://premiumbot.netlify.com)
