@@ -2433,7 +2433,7 @@ client.on('message', function(message) {
 	function search_video(query, cb) {
 		request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
 			var json = JSON.parse(body);
-			cb(json.items[0].id.videoId);
+			cb();
 		});
 	}
 
