@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [`${client.guilds.size} Server`,' Evloved Bot™ by mariam ','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: mariam | shop'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -588,10 +588,10 @@ client.on("message", message => {
  if (message.content === "-support") {
   const embed = new Discord.RichEmbed()
       .setTitle('Click here')
-      .setURL(' https://discord.gg/ZnPDHaA ')
+      .setURL(' https://discord.gg/sSP6JE ')
       .setColor("RANDOM")
-      .setFooter('© Premium Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
-      .addField('سيرفر الدعم الفني', ` https://discord.gg/ZnPDHaA  `)
+      .setFooter('© Evolved Bot :heart: جميع الحقوق محفوظة 2018 لــبوت')  
+      .addField('سيرفر الدعم الفني', ` https://discord.gg/sSP6JE  `)
   message.author.send({embed});
 
  }
@@ -705,7 +705,7 @@ client.on('message', message => {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``this Premium Bot`` ')
+            .setTitle('``this Evolved Bot`` ')
             .addField('``سرعة البوت 📡``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``الرامات المستخدمة ☄️``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('`` السيرفرات🏢``', [client.guilds.size], true)
